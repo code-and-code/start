@@ -1,0 +1,31 @@
+{
+    "name": "codeandcode/start",
+    "require": {
+        "php": ">=5.3",
+        "codeandcode/micro-fwk": "^1.0"
+     },
+    "require-dev": {
+
+    },
+    "authors": [
+        {
+            "name": "CodeAndCode",
+            "email": "contato@codeandcode.com.br"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Cac\\": "vendor/codeandcode/micro-fwk",
+            "App\\": "App/"
+        },
+        "files":
+        [
+            "vendor/codeandcode/micro-fwk/Helpers/Helper.php"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "minimum-stability": "dev"
+
+}

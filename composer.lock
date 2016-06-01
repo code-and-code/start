@@ -1,0 +1,48 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "2376075cd911092219862d33ea958c64",
+    "content-hash": "f985b24b30845025eca5927691775d9f",
+    "packages": [
+        {
+            "name": "codeandcode/micro-fwk",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/code-and-code/micro-fwk.git",
+                "reference": "8f3f0d55f6412fb83dd2e4ba9a9ff634b9796e71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/8f3f0d55f6412fb83dd2e4ba9a9ff634b9796e71",
+                "reference": "8f3f0d55f6412fb83dd2e4ba9a9ff634b9796e71",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "CodeAndCode",
+                    "email": "contato@codeandcode.com.br"
+                }
+            ],
+            "time": "2016-06-01 16:28:51"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.3"
+    },
+    "platform-dev": []
+}
