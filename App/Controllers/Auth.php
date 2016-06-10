@@ -4,11 +4,6 @@ namespace App\Controllers;
 class Auth extends \Cac\Auth\Auth
 {
 
-    protected $class        = 'App\Models\User';
-    protected $viewLogin    = 'login';
-    protected $viewRegister ='register';
-    protected $columns      = ['email','password'];
-
     public function __construct()
     {
         parent::__construct();
