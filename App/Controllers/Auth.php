@@ -9,6 +9,11 @@ class Auth extends \Cac\Auth\Auth
     protected $viewRegister ='register';
     protected $columns      = ['email','password'];
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setConfig('auth');
+    }
 
     public function store($array)
     {

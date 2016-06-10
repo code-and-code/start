@@ -8,8 +8,9 @@ class Init extends Bootstrap
 {
     protected function initRoutes()
     {
-        $ar['home']    = ['route' => '/',           'controller' => 'Index', 'auth' =>true, 'action' => 'index'];
-        $ar['contact'] = ['route' => '/contact',    'controller' => 'Index', 'action' => 'contact'];
+        $ar['index.home']    = ['route' => '/',           'controller' => 'Index', 'action' => 'index'];
+        $ar['index.contact'] = ['route' => '/contact',    'controller' => 'Index', 'action' => 'contact'];
+        $ar['index.admin']   = ['route' => '/admin',      'controller' => 'Index', 'auth' =>true, 'action' => 'admin'];
 
         $ar['auth']                   = ['route' => '/auth',               'controller' => 'Auth', 'action' => 'getLogin'    ];
         $ar['auth.login']             = ['route' => '/auth/login',         'controller' => 'Auth', 'action' => 'postLogin'   ];

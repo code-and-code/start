@@ -7,7 +7,7 @@ class Index extends  BaseController
 {
     public function index()
     {
-        $this->render('index',['name' => '{CodeAndCode}']);
+        $this->render('index');
     }
 
     public function contact()
@@ -15,5 +15,9 @@ class Index extends  BaseController
         echo $this->maker('index/contact.html',['contact' => 'Your page. Contact'],true);
     }
 
+    public function admin()
+    {
+        echo 'Esta Logado..';
+    }
 
 }
