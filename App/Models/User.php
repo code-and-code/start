@@ -6,6 +6,6 @@ use Cac\Model\Model;
 
 class User extends Model {
 
-    protected $table = "users";
-    use Authentication;
+    protected $table      = "users";
+
 }

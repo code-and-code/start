@@ -1,7 +1,8 @@
 <?php
 
 return [
-           'public' => true,
+           'public'    => true,
+           'timezone' => 'UTC',
 
            'database' => [ 'host'     => '127.0.0.1',
                            'dbname'   => 'code',
