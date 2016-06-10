@@ -10,11 +10,8 @@ class Auth extends \Cac\Auth\Auth
         $this->setConfig('auth');
     }
 
-    public function store($array)
+    public function getLogin()
     {
-        $user = new $this->class();
-        $user->create($array);
-        return true;
+        echo $this->maker('auth/login.phtml',true);
     }
-
 }

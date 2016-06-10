@@ -14,10 +14,4 @@ class Index extends  BaseController
     {
         echo $this->maker('index/contact.html',['contact' => 'Your page. Contact'],true);
     }
-
-    public function admin()
-    {
-        echo 'Esta Logado..';
-    }
-
 }
