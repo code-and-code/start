@@ -2,7 +2,7 @@
     "name": "codeandcode/start",
     "require": {
         "php": ">=5.3",
-        "codeandcode/micro-fwk": "dev-master",
+        "codeandcode/micro-fwk": "dev-master"
      },
     "require-dev": {
 
