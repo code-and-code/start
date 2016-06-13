@@ -3,7 +3,6 @@
     "require": {
         "php": ">=5.3",
         "codeandcode/micro-fwk": "dev-master",
-        "mailgun/mailgun-php": "^2.0"
      },
     "require-dev": {
 
