@@ -62,17 +62,18 @@
             </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                <?php
 
-                    if(guest())
-                    {
-                        include('auth/_infologin.phtml');
-                    }
-                    else
-                    {
-                        echo "<li><a href=\"/auth\">Entrar</a></li>";
-                    }
-                ?>
+
+
+                {% if guest() == true %}
+
+                   {{ include(view('auth._infologin')) }}
+
+                {% else %}
+
+                    <li><a href="/auth">Entrar</a></li>
+
+                {% endif %}
                 </ul>
 
             </div><!--/.nav-collapse -->
@@ -81,7 +82,7 @@
 
 <div class="container">
 
-    <?= $this->content()?>
+    {% block content %}{% endblock %}
 
 </div>
 

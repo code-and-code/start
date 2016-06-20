@@ -1,13 +1,13 @@
 <?php
 namespace App\Controllers;
 
-use Cac\Controller\BaseController;
 
-class Index extends  BaseController
+class Index extends \Cac\Auth\Auth
 {
+
     public function index()
     {
-        $this->render('index');
+        echo $this->render('index.index', ['message' => 'Welcome']);
     }
 
     public function contact()

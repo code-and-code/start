@@ -3,8 +3,8 @@
 return [
         'auth' => [
                     'class'          =>'App\Models\User',
-                    'viewLogin'      =>'login',
-                    'viewRegister'   => 'register',
+                    'viewLogin'      => 'auth.login',
+                    'viewRegister'   => 'auth.register',
                     'required'       => ['email','password'],
                     'redirect'       => '/admin',
                     'notauthorized'  => '/auth'

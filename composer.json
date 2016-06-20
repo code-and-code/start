@@ -2,8 +2,7 @@
     "name": "codeandcode/start",
     "require": {
         "php": ">=5.3",
-        "codeandcode/micro-fwk": "dev-master",
-        "mailgun/mailgun-php": "^2.0"
+        "codeandcode/micro-fwk": "˜1.2"
      },
     "require-dev": {
 

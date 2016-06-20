@@ -1,12 +1,12 @@
 <?php
 namespace App\Controllers;
 
-use Cac\Controller\BaseController;
+use Cac\Controller\Action;
 
-class Admin extends  BaseController
+class Admin extends Action
 {
     public function index()
     {
-        $this->render('index',['email' => auth('email')]);
+        echo $this->render('admin.index');
     }
 }

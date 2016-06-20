@@ -10,9 +10,11 @@ return [
                            'password' =>  ''
                           ],
 
-            'layout' =>  ['folder'   => '',
-                          'default'  => 'app.phtml',
-                          'tag'      => ['{','}']
+            'layout' =>  ['folder'    => 'App/views/',
+                          'tag'       => ['{','}'],
+                          'extension' => '.html.twig'
                           ]
+
+
         ];
 
