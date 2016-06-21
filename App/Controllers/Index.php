@@ -1,10 +1,10 @@
 <?php
 namespace App\Controllers;
 
+use Cac\Controller\Action;
 
-class Index extends \Cac\Auth\Auth
+class Index extends Action
 {
-
     public function index()
     {
         echo $this->render('index.index', ['message' => 'Welcome']);
@@ -12,6 +12,7 @@ class Index extends \Cac\Auth\Auth
 
     public function contact()
     {
-        echo $this->maker('index/contact.html',['contact' => 'Your page. Contact'],true);
+        echo $this->maker('index/contact.html', ['contact' => 'Your page. Contact'], true);
     }
+
 }

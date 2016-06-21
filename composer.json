@@ -2,7 +2,8 @@
     "name": "codeandcode/start",
     "require": {
         "php": ">=5.3",
-        "codeandcode/micro-fwk": "ˆ1.2"
+        "codeandcode/micro-fwk": "~1.2",
+        "desarrolla2/cache":  "~2.0"
      },
     "require-dev": {
 
