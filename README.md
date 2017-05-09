@@ -1,6 +1,18 @@
 # start
 Projeto inicial PHP + MVC
 
+## Introdução
+
+Start é um micro framework de aplicação web. Acreditamos que o desenvolvimento deve ser uma experiência agradável e eficiente.
+O Start tenta facilitar a vida do desenvolvedor, com os seguintes recursos:
+
+    Banco de dados ORM expressivo e intuitivo 
+    Vários back-ends para armazenamento de sessão e cache
+    Motor de renderização simples e rápido
+    Sistemas de rotas
+    Envio de email
+    Sistema de upload
+    
 ## Instalação
 
 #### 1 - Dependências do Projeto
@@ -205,9 +217,45 @@ Para fazer uma chamada de view através da controle, use o metodo "$this->render
 Construção do arquivo de view 
 
     [nome_da_view.html.twig]
+ 
+Helpers
+
+    auth() -> retorna usuário logado
+    guest() -> verifica se o usuário esta logado
+    view() -> retorna view
+    include() -> inclue uma view
+    extends -> extende uma view
+    block -> sessão reservada no HTML
+    
+    Mais informações https://github.com/twigphp/Twig
+ 
 Para usar lógica utilize as  tags de interpretação 
 
     {%  %}
+    
+    Exemplos Condicionais: 
+    
+       {% if guest() == true %}
+
+          {{ include( view(‘auth._infologin’) ) }}
+
+       {% else %}
+
+           <li><a href=“/auth”>Entrar</a></li>
+
+       {% endif %}
+            
+    Exemplo Repetição
+    
+         {% for user in users %}
+
+            <tr>
+                <td>{{ user.id }} </td>
+                <td>{{ user.email }}</td>
+            </tr>
+
+         {% endfor %}
+        
 Para exibir uma variável na view utilize as tags de interpretação 
 
     {{ }}
