@@ -1,5 +1,6 @@
 # start
 Projeto inicial PHP + MVC
+
 ## Instalação
 
 #### 1 - Dependências do Projeto
@@ -61,7 +62,14 @@ Métodos de query;
     getAttributes() -> captura quais atributos aquele objeto possui
     get() -> Lista o resultado da consulta
     first() -> trás o primeiro registro da tabela 
-   
+    
+Controle de Criação e Atualização
+    
+    Para ter abilitar esse controle, só é preciso que a tabela tenha as seguintes colunas:
+    
+    created_at -> do tipo dateTime, not null
+    updated_at -> do tipo dateTime, not null
+    
 Exemplo -  Model:
 
     <?php
@@ -136,9 +144,7 @@ Exemplo - Relacionamento
        {
            return $this->belongsTo(User::class,‘id’,‘friend_id’);
        }
-    }
-    
-    
+    }    
 
 #### 5 - Sistema de Rotas 
 
@@ -315,3 +321,46 @@ Para usar o sistema de caches, pode-se usar o seguintes métodos:
             Cache::delete(‘key’); -> deleta o cache com determinado indice
         }
     }
+
+#### 11 - Helpers
+
+O sistema inclui uma variedade de funções globais “helper” PHP. Muitas dessas funções são usadas pelo próprio framework.
+
+    config() -> retorina o arquivo de configuração no arquivo passado por parametro. 
+        
+        Ex: config('app.database.username')
+        
+    auth() -> retorna o objeto do usuário logado.
+    
+        Ex: if(auth())
+            {
+                echo auth()->email;
+            }else
+            {
+                echo 'NÃO LOGADO';
+            }
+        
+    guest() -> verifica se está logado ou não
+    
+        Ex: if(guest())
+            {
+                echo 'LOGADO';
+            }else
+            {
+                echo 'NÃO LOGADO';
+            }
+            
+    arrayToObject() -> converte array para objeto
+    
+        Ex:  $array = ['email' => 'teste@teste.com'];
+             $obj = arrayToObject($array);
+             echo $obj->email;
+             
+     objectToArray() -> converte objeto para array
+    
+        Ex:  $obj = new Class();
+             $obj->email = 'teste@teste.com';
+             $array = objectToArray($obj);
+             echo $array['email'];
+             
+            
