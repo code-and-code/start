@@ -5,7 +5,7 @@ return [
                                'SMTPSecure' => 'tls',
                                'SMTPAuth' => true,
                                'SMTPDebug'=>false,
-                               'Username' => 'adriano@adriano.com.br',
-                               'Password' => 'teste'
+                               'Username' => 'email@email.com.br',
+                               'Password' => 'email'
             ]
 ];

@@ -7,8 +7,8 @@ return [
 
     'database' => [ 'host'     => '127.0.0.1',
         'dbname'   => 'start',
-        'username' => 'root',
-        'password' =>  '123456'
+        'username' => '',
+        'password' =>  ''
     ],
 
     'layout' => [
