@@ -1,5 +1,6 @@
 {
     "name": "codeandcode/start",
+    "license": "MIT",
     "require": {
         "php": ">=5.3",
         "codeandcode/micro-fwk": "^1.4"
