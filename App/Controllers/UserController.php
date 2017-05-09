@@ -11,11 +11,21 @@ class Admin extends Action
 
     public function __construct()
     {
-        $this->user = new User;
+        $this->user = auth();
     }
 
     public function index()
     {
-        echo $this->render('admin.index');
+        echo $this->render('user.index');
+    }
+
+    public function edit()
+    {
+        echo $this->render('user.edit');
+    }
+
+    public function update()
+    {
+  
     }
 }
