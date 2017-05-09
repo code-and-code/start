@@ -9,6 +9,7 @@ O Start tenta facilitar a vida do desenvolvedor, com os seguintes recursos:
     Banco de dados ORM expressivo e intuitivo 
     Vários back-ends para armazenamento de sessão e cache
     Motor de renderização simples e rápido
+    Sistemas de autenticação
     Sistemas de rotas
     Envio de email
     Sistema de upload
@@ -162,11 +163,12 @@ Exemplo - Relacionamento
 
 Localizado no diretório [App\Init.php]
     
-    $ar['user.index']    = ['route' => '/',           'controller' => 'Index', 'action' => 'index'];
+    $ar['user.index']    = ['route' => '/',  'method' => 'GET', 'controller' => 'Index', 'auth' => true ,'action' => 'index'];
     
     Componentes
-        'auth' -> nome do módulo
-        'home' -> nome da rota. Obs: Não pode haver duplicidade no mesmo módulo
+    
+        'auth' -> requer um usuário autenticado 
+        'user.index' -> indice (apelido da rota). Obs: Não pode haver duplicidade no mesmo módulo
         'route' -> url
         'controller' -> nome Controller
         'action' -> método que será executado na controller
@@ -260,6 +262,13 @@ Para exibir uma variável na view utilize as tags de interpretação
 
     {{ }}
 
+Para Configurar a view, vá ao diretório [App\config\mail.php].
+
+    'layout' =>  [         'folder'     => '../App/views/',
+                           'tag'       => ['{','}'],
+                           'extension' => '.html.twig',
+                           'cache'     => 'storage/compilation_cache'
+                        ],
 
 #### 8 - Envio de E-mail
 
@@ -338,6 +347,12 @@ Exemplo:
             $file->setName($nameFile)->mimeType(['image/png','image/jpeg', 'image/jpg'])->maxSize('3MB')->upload();        
         }
     }
+    
+Para Configurar os diretórios de upload, vá ao diretório [App\config\mail.php].
+
+    'file'  => [
+                    'folder' => 'images'
+                ]
 
 #### 10 - Cache
 
@@ -369,6 +384,13 @@ Para usar o sistema de caches, pode-se usar o seguintes métodos:
             Cache::delete(‘key’); -> deleta o cache com determinado indice
         }
     }
+
+Para Configurar o sistema de cache, vá ao diretório [App\config\mail.php].
+
+    'cache'  => [ 
+                    'active' => true,
+                    'folder' => 'storage/cache',
+                ]
 
 #### 11 - Helpers
 
