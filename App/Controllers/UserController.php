@@ -5,7 +5,7 @@ use App\Models\User;
 use Cac\Controller\Action;
 use Cac\Support\Cache;
 
-class Admin extends Action
+class UserController extends Action
 {
     private $user;
 
@@ -26,6 +26,6 @@ class Admin extends Action
 
     public function update()
     {
-  
+
     }
 }
