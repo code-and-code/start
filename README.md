@@ -28,6 +28,10 @@ Instalação
 
 Para instalar as dependências do projeto, execute os seguintes comando:
 
+    composer create codeandcode/start
+    
+    ou
+    
     git clone https://github.com/code-and-code/start.git
     cd start
     composer install 
