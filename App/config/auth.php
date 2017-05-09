@@ -6,7 +6,7 @@ return [
         'viewLogin'      => 'login',
         'viewRegister'   => 'register',
         'required'       => ['email','password'],
-        'redirect'       => '/admin',
+        'redirect'       => '/user',
         'notauthorized'  => '/auth'
     ],
 
