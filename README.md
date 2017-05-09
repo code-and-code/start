@@ -1,10 +1,10 @@
-# start
-Projeto inicial PHP + MVC
+# Start
+Comece sua viagem no mundo da programação WEB, com PHP + MVC.
 
 ## Introdução
 
 Start é um micro framework de aplicação web. Acreditamos que o desenvolvimento deve ser uma experiência agradável e eficiente.
-O Start tenta facilitar a vida do desenvolvedor, com os seguintes recursos:
+O Start tenta facilitar a vida do desenvolvedor iniciante, disponibilizando os seguintes recursos:
 
     Banco de dados ORM expressivo e intuitivo 
     Vários back-ends para armazenamento de sessão e cache
@@ -31,7 +31,7 @@ Para instalar as dependências do projeto, execute os seguintes comando:
     git clone https://github.com/code-and-code/start.git
     cd start
     composer install 
-    importat SQL start_DB.sql
+    importe SQL start_DB.sql
 
 #### 3 - Inicializando do Projeto
 
