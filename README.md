@@ -21,7 +21,7 @@ Para instalar as dependências do projeto, execute os seguintes comando:
 
 Para iniciar a aplicação, siga as instruções:
 
-    php + servidor:porta -t ./pasta_de_inicialização
+    php -S servidor:porta -t ./pasta_de_inicialização
 Exemplo:
 
     php -S 127.0.0.1:8080 -t ./public
@@ -43,40 +43,102 @@ Deve referenciar a tabela que a model irá se comunicar.
 
 Pode criar métodos de relacionamento utilizando os methodos:
  
-    hasMany(), hasOne(), belongsTo().
+    hasMany(Class) -> um pra muitos
+    hasOne(Class) -> um pra um
+    belongsTo(Class) ou  belongsTo(Class, 'coluna_externa', 'coluna_interna') -> um pra um invertido.
 
 Métodos de query;
 
-    all() -> busca todos objetos
-    find($id) -> busca determinado objeto através do ID
+    all() -> busca todos registros da tabela
+    find($id) -> busca determinado registro através do ID
     where($name,$operator,$value) -> clausula de comparação
-    andWhere($name,$operator,$value) -> clausula de comparação com lógica
-    create(array $attributes) -> cria (cadastra) objeto com os atributos passados por parametro gravando no BD
-    update(array $attributes) -> atualiza objeto com os atributos passados por parametro gravando no BD
-    delete() -> deleta objeto do BD
-    fill(array $attributes) -> cria um objeto sem gravar no BD
+    andWhere($name,$operator,$value) -> clausula de comparação 
+    create(array $attributes) -> cria registro com os atributos passados por parametro 
+    update(array $attributes) -> atualiza o registro com os atributos passados por parametro
+    delete() -> deleta registro
+    fill(array $attributes) -> preenche os atributos do objeto
     toArray() -> transforma um objeto em Array
     getAttributes() -> captura quais atributos aquele objeto possui
     get() -> Lista o resultado da consulta
-    first() -> trás o primeiro objeto da tabela no BD
+    first() -> trás o primeiro registro da tabela 
    
-Exemplo:
+Exemplo -  Model:
 
     <?php
     namespace App\Models;
 
     use Cac\Model\Model;
 
-
-    class Client extends Model
+    class User extends Model
     {
-        protected $table = "clients";
-
-        public function Password()
-        {
-            return $this->belongsTo(Personal_Password::class);
-        }
+        protected $table = "users";
     }
+    
+Exemplo - Relacionamento
+    
+    Tabelas
+    users
+        id - integer
+        email - string
+        profile_id - integer
+        
+    profile
+        id - integer
+        name - string
+
+    friends
+        id - integer
+        user_id - integer
+        friend_id - integer
+    
+    **Models**
+    
+    <?php
+    namespace App\Models;
+    use Cac\Model\Model;
+    
+    class User extends Model {
+
+       protected $table      = “users”;
+
+       public function Profile()
+       {
+           return $this->hasOne(Profile::class);
+       }
+
+       public function Friends()
+       {
+           return $this->hasMany(Friend::class);
+       }
+
+    }
+    
+    class Profile extends Model {
+
+       protected $table      = “profiles”;
+
+       public function User()
+       {
+           return $this->belongsTo(User::class);
+       }
+    }
+    
+    class Friend extends Model {
+
+       protected $table      = “friends”;
+
+       public function User()
+       {
+           return $this->belongsTo(User::class,‘id’,‘user_id’);
+       }
+
+       public function Friend()
+       {
+           return $this->belongsTo(User::class,‘id’,‘friend_id’);
+       }
+    }
+    
+    
 
 #### 5 - Sistema de Rotas 
 
@@ -87,24 +149,22 @@ Localizado no diretório [App\Init.php]
     Componentes
         'auth' -> nome do módulo
         'home' -> nome da rota. Obs: Não pode haver duplicidade no mesmo módulo
-        'route' -> nome url
+        'route' -> url
         'controller' -> nome Controller
-        'action' -> método que será chamado na controller
+        'action' -> método que será executado na controller
         'method' -> tipo da requisição
         
 Exemplo:
     
     <?php
-
     namespace App;
-
     use Cac\Init\Bootstrap;
 
     class Init extends Bootstrap
     {
         protected function initRoutes()
         {
-            $ar['auth.index'] = ['route' => '/auth',                        'controller' => 'AuthController',  'action' => 'getLogin' ];
+            $ar['auth.index'] = ['route' => '/auth',                         'controller' => 'AuthController',  'action' => 'getLogin'];
             $ar['auth.login'] = ['route' => '/auth/login', 'method'=>'POST', 'controller' => 'AuthController', 'action' => 'postLogin'];
         }
     }
@@ -122,17 +182,15 @@ Para construir uma controler, crie um classe que extende da classe Action, local
 
     class ClientController extends Action
     {
-        private $client;
-
-        public function __construct()
+        public function index()
         {
-            $this->client = new Client();
+            ** Codigo **
         }
     }
 
 #### 7 - View
 
-Para fazer uma chamada dw view através da controle, use o metodo "$this->render('caminho_da_view', ['varieis ou objetos'])" usando o "echo" para imprimir na tela.
+Para fazer uma chamada de view através da controle, use o metodo "$this->render('caminho_da_view', ['varieis ou objetos'])" usando o "echo" para imprimir na tela.
    
     public function index()
     {
@@ -152,17 +210,44 @@ Para exibir uma variável na view utilize as tags de interpretação
 
 #### 8 - Envio de E-mail
 
-Para realizar o envio de email, usa o metodo render('caminho_da_view', [objeto]) para construir um HTML, e usa a classe Mail localizada em:  App\Support\Mail, para disparar, new Mail('endereço_que_será_enviado', HTML(renderizado), 'Título do Email');
-
-    use App\Support\Mail;
+Para realizar o envio de email, utilize a classe Mail localizada em:  App\Support\Mail.
+new Mail('endereço_que_será_enviado', HTML(renderizado) ou  menssagem, 'Título do Email', html(true, false));
     
-    public function sendEmail()
-    {
-        $answer  = $this->render('site.email.answer');
-        $mail = new Mail('contato@hotspotcwk.com.br', $answer, 'Novo Contato');
-       
-    }
+    <?php
 
+        namespace App\Controllers;
+
+        use App\Models\Client;
+        use Cac\Controller\Action;
+
+        class ClientController extends Action
+        {
+            public function sendEmail()
+            {
+                $mail = new Mail('para@dominio.com.br', 'Menssagem', 'Título', false);
+            }
+        }
+    
+Como desparar email com mensagem em HTML.
+
+ Use o metodo render('caminho_da_view', [objeto]) para construir um HTML.
+ 
+     <?php
+
+        namespace App\Controllers;
+
+        use App\Models\Client;
+        use Cac\Controller\Action;
+
+        class ClientController extends Action
+        {
+            public function sendEmail()
+            {
+                $html  = $this->render('site.email.answer');
+                $mail = new Mail('para@dominio.com.br', $html, 'Título', true);
+            }
+        }
+        
 Para Configurar o envio de email, vá ao diretório [App\config\mail.php] e informe as suas configurações de email.
 
     <?php
@@ -186,15 +271,50 @@ Para fazer o Upload de arquivo, crie um objeto usando a classe File localizada e
     upload() -> realizar upload
 Exemplo:
 
-    $file  = new File($_FILES['file'],images);
-    $nameFile   = md5(date('H:m:s:'));
-    $file->setName($nameFile)->mimeType(['image/png','image/jpeg', 'image/jpg'])->maxSize('3MB')->upload();
+     <?php
+
+    namespace App\Controllers;
+
+    use App\Models\Client;
+    use Cac\Controller\Action;
+
+    class ClientController extends Action
+    {
+        public function upload()
+        {
+            $file  = new File($_FILES['file'],images);
+            $nameFile   = md5(date('H:m:s:')); 
+            $file->setName($nameFile)->mimeType(['image/png','image/jpeg', 'image/jpg'])->maxSize('3MB')->upload();        
+        }
+    }
 
 #### 10 - Cache
 
 Para usar o sistema de caches, pode-se usar o seguintes métodos:
 
-    Cache::set(‘key’,‘value’); -> cria um cache passando o Indice e seu valor
-    Cache::get(‘key’); -> caputa o cache com determinado indice
-    Cache::delete(‘key’); -> deleta o cache com determinado indice
-    
+<?php
+
+    namespace App\Controllers;
+
+    use App\Models\Client;
+    use Cac\Controller\Action;
+
+    class ClientController extends Action
+    {
+        public function getCache()
+        {
+            Cache::get(‘key’); -> caputa o cache com determinado indice             
+        }
+        
+        
+        public function setCache()
+        {
+            Cache::set(‘key’,‘value’); -> cria um cache passando o Indice e seu valor
+        }
+        
+        
+        public function deleteCache()
+        {
+            Cache::delete(‘key’); -> deleta o cache com determinado indice
+        }
+    }
