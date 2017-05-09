@@ -2,8 +2,7 @@
     "name": "codeandcode/start",
     "require": {
         "php": ">=5.3",
-        "codeandcode/micro-fwk": "~1.2",
-        "desarrolla2/cache":  "~2.0"
+        "codeandcode/micro-fwk": "^1.2"
      },
     "require-dev": {
 
@@ -23,9 +22,6 @@
         [
             "vendor/codeandcode/micro-fwk/Helpers/Helper.php"
         ]
-    },
-    "config": {
-        "bin-dir": "bin"
     },
     "minimum-stability": "dev"
 

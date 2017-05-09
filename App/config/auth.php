@@ -1,14 +1,13 @@
 <?php
 
 return [
-        'auth' => [
-                    'class'          =>'App\Models\User',
-                    'viewLogin'      => 'auth.login',
-                    'viewRegister'   => 'auth.register',
-                    'required'       => ['email','password'],
-                    'redirect'       => '/admin',
-                    'notauthorized'  => '/auth'
-                   ],
-
+    'auth' => [
+        'class'          => 'App\Models\User',
+        'viewLogin'      => 'login',
+        'viewRegister'   => 'register',
+        'required'       => ['email','password'],
+        'redirect'       => '/admin',
+        'notauthorized'  => '/auth'
+    ],
 
 ];

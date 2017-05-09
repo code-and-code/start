@@ -8,17 +8,19 @@ class Init extends Bootstrap
 {
     protected function initRoutes()
     {
-        $ar['index.home']     = ['route' => '/',         'controller' => 'Index', 'action' => 'index'];
-        $ar['index.contact']  = ['route' => '/contact',  'controller' => 'Index', 'action' => 'contact'];
+        $ar['home.index']    = ['route' => '/',         'controller' =>  'HomeController', 'method'=>'GET', 'action' => 'index'];
+        $ar['home.contact']  = ['route' => '/contact',   'controller' => 'HomeController', 'method'=>'GET', 'action' => 'contact'];
+
+        $ar['auth.index']     = ['route' => '/auth',          'controller' => 'AuthController', 'method'=>'GET',  'action' => 'getLogin'   ];
+        $ar['auth.login']     = ['route' => '/auth/login',    'controller' => 'AuthController', 'method'=>'POST', 'action' => 'postLogin'  ];
+        $ar['auth.logout']    = ['route' => '/auth/logout',   'controller' => 'AuthController', 'method'=>'GET',  'action' => 'logout'     ];
+
+        $ar['register']       = ['route' => '/register',      'controller' => 'AuthController', 'method'=>'GET', 'action' => 'getRegister' ];
+        $ar['register.store'] = ['route' => '/register/store','controller' => 'AuthController', 'method'=>'POST','action' => 'postRegister'];
+
 
         $ar['admin']          = ['route' => '/admin',         'controller' => 'Admin', 'auth' =>true, 'action' => 'index'];
 
-        $ar['auth.index']     = ['route' => '/auth',          'controller' => 'Auth', 'action' => 'getLogin'    ];
-        $ar['auth.login']     = ['route' => '/auth/login',    'method'=>'POST',       'controller' => 'Auth', 'action' => 'postLogin'   ];
-        $ar['auth.logout']    = ['route' => '/auth/logout',   'controller' => 'Auth', 'action' => 'logout'      ];
-
-        $ar['register']       = ['route' => '/register',      'controller' => 'Auth', 'action' => 'getRegister' ];
-        $ar['register.store'] = ['route' => '/register/store','method'=>'POST','controller' => 'Auth', 'action' => 'postRegister'];
 
         $this->setRoutes($ar);
     }
