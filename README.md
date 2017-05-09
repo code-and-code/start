@@ -144,7 +144,7 @@ Exemplo - Relacionamento
 
 Localizado no diretório [App\Init.php]
     
-    $ar['auth.index']    = ['route' => '/',           'controller' => 'Index', 'action' => 'index'];
+    $ar['user.index']    = ['route' => '/',           'controller' => 'Index', 'action' => 'index'];
     
     Componentes
         'auth' -> nome do módulo
@@ -164,8 +164,8 @@ Exemplo:
     {
         protected function initRoutes()
         {
-            $ar['auth.index'] = ['route' => '/auth',                         'controller' => 'AuthController',  'action' => 'getLogin'];
-            $ar['auth.login'] = ['route' => '/auth/login', 'method'=>'POST', 'controller' => 'AuthController', 'action' => 'postLogin'];
+            $ar['user.index'] = ['route' => '/',                              'controller' => 'AuthController',  'action' => 'index'];
+            $ar['user.upload'] = ['route' => '/auth/login', 'method'=>'POST', 'controller' => 'AuthController',  'action'=>'upload' ];
         }
     }
 
@@ -174,13 +174,12 @@ Exemplo:
 Para construir uma controler, crie um classe que extende da classe Action, localizada em: Cac\Controller\Action;
 
     <?php
-
     namespace App\Controllers;
-
-    use App\Models\Client;
+    
+    use App\Models\User;
     use Cac\Controller\Action;
 
-    class ClientController extends Action
+    class UserController extends Action
     {
         public function index()
         {
@@ -194,7 +193,7 @@ Para fazer uma chamada de view através da controle, use o metodo "$this->render
    
     public function index()
     {
-        echo $this->render('user.client.index', ['clients' => $this->client->all()]);
+        echo $this->render('user.index', ['user' => $this->user->all()]);
     }
 
 Construção do arquivo de view 
@@ -214,13 +213,12 @@ Para realizar o envio de email, utilize a classe Mail localizada em:  App\Suppor
 new Mail('endereço_que_será_enviado', HTML(renderizado) ou  menssagem, 'Título do Email', html(true, false));
     
     <?php
-
         namespace App\Controllers;
 
-        use App\Models\Client;
+        use App\Models\User;
         use Cac\Controller\Action;
 
-        class ClientController extends Action
+        class UserController extends Action
         {
             public function sendEmail()
             {
@@ -233,13 +231,12 @@ Como desparar email com mensagem em HTML.
  Use o metodo render('caminho_da_view', [objeto]) para construir um HTML.
  
      <?php
-
         namespace App\Controllers;
 
-        use App\Models\Client;
+        use App\Models\User;
         use Cac\Controller\Action;
 
-        class ClientController extends Action
+        class UserController extends Action
         {
             public function sendEmail()
             {
@@ -275,10 +272,10 @@ Exemplo:
 
     namespace App\Controllers;
 
-    use App\Models\Client;
+    use App\Models\User;
     use Cac\Controller\Action;
 
-    class ClientController extends Action
+    class UserController extends Action
     {
         public function upload()
         {
@@ -292,14 +289,14 @@ Exemplo:
 
 Para usar o sistema de caches, pode-se usar o seguintes métodos:
 
-<?php
+    <?php
 
     namespace App\Controllers;
 
-    use App\Models\Client;
+    use App\Models\User;
     use Cac\Controller\Action;
 
-    class ClientController extends Action
+    class UserController extends Action
     {
         public function getCache()
         {
