@@ -12,7 +12,7 @@ class HomeController extends Action
 
     public function contact()
     {
-        echo $this->render('home.contact', ['contact' => 'Your page. Contact'], true);
+        echo $this->render('home.contact', ['contact' => 'Pagina Contato']);
     }
 
 }
