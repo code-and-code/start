@@ -190,3 +190,11 @@ Exemplo:
     $nameFile   = md5(date('H:m:s:'));
     $file->setName($nameFile)->mimeType(['image/png','image/jpeg', 'image/jpg'])->maxSize('3MB')->upload();
 
+#### 10 - Cache
+
+Para usar o sistema de caches, pode-se usar o seguintes métodos:
+
+    Cache::set(‘key’,‘value’); -> cria um cache passando o Indice e seu valor
+    Cache::get(‘key’); -> caputa o cache com determinado indice
+    Cache::delete(‘key’); -> deleta o cache com determinado indice
+    
