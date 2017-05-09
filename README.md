@@ -20,6 +20,7 @@ O Start tenta facilitar a vida do desenvolvedor, com os seguintes recursos:
 
     php 5.3+
     composer
+    mysql
 
 Instalação
 
@@ -30,6 +31,7 @@ Para instalar as dependências do projeto, execute os seguintes comando:
     git clone https://github.com/code-and-code/start.git
     cd start
     composer install 
+    importat SQL start_DB.sql
 
 #### 3 - Inicializando do Projeto
 
