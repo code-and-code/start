@@ -3,7 +3,7 @@
     "license": "MIT",
     "require": {
         "php": ">=5.3",
-        "codeandcode/micro-fwk": "^1.4"
+        "codeandcode/micro-fwk": "^1.5"
      },
     "require-dev": {
 
