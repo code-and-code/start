@@ -1,4 +1,5 @@
-# Start
+![alt text](http://blog.codeandcode.com.br/wp-content/uploads/2017/07/Captura-de-Tela-2017-07-05-%C3%A0s-15.46.33.png)
+
 Comece sua viagem no mundo da programação WEB, com PHP + MVC.
 
 ## Introdução
