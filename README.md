@@ -33,10 +33,11 @@ Para instalar as dependências do projeto, execute os seguintes comando:
     
     ou
     
-    git clone https://github.com/code-and-code/start.git
+    git clone -b 1.0 https://github.com/code-and-code/start.git
     cd start
     composer install 
-    importe SQL start_DB.sql
+    
+    importe o arquivo SQL start_DB.sql
 
 #### 3 - Inicializando do Projeto
 
@@ -285,6 +286,7 @@ new Mail('endereço_que_será_enviado', HTML(renderizado) ou  menssagem, 'Títul
     <?php
         namespace App\Controllers;
 
+        use Cac\Support\Mail;
         use App\Models\User;
         use Cac\Controller\Action;
 
@@ -303,6 +305,7 @@ Como desparar email com mensagem em HTML.
      <?php
         namespace App\Controllers;
 
+        use Cac\Support\Mail;
         use App\Models\User;
         use Cac\Controller\Action;
 
@@ -392,7 +395,7 @@ Para usar o sistema de caches, pode-se usar o seguintes métodos:
         }
     }
 
-Para Configurar o sistema de cache, vá ao diretório [App\config\mail.php].
+Para Configurar o sistema de cache, vá ao diretório [App\config\app.php].
 
     'cache'  => [ 
                     'active' => true,
