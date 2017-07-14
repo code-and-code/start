@@ -1,7 +1,9 @@
 <?php
-namespace App\Controllers;
+namespace App\Controllers\Auth;
 
-class AuthController extends \Cac\Auth\Auth
+use Cac\Auth\Auth;
+
+class AuthController extends Auth
 {
     public function __construct()
     {

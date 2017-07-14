@@ -16,7 +16,7 @@ return [
         'folder'     => '../App/views/',
         'tag'       => ['{','}'],
         'extension' => '.html.twig',
-        'cache'     => '../../../storage/compilation_cache'
+        'cache'     => '../storage/compilation_cache'
     ],
 
     'file'  => [
@@ -24,7 +24,17 @@ return [
     ],
 
     'cache'  => [ 'active' => true,
-        'folder' => '../../../storage/cache',
+        'folder' => '../storage/cache',
+    ],
+
+    'log'  => [ 'file' => 'main.log',
+    'folder' => '../storage/log',
+    ],
+
+    'providers'=> [
+
+            'App\Providers\StartProvider',
+            'App\Providers\AuthProvider',
     ]
 ];
 

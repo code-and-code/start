@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a291504a4b774fead444a7d53194a5ff",
-    "content-hash": "b206f506e5d332cbef1bf38300d5d42e",
+    "hash": "b31c104ad2d04f341e74a7711d1ecb29",
+    "content-hash": "a419ddbe6c82bab3b890b5634010309e",
     "packages": [
         {
             "name": "codeandcode/micro-fwk",
-            "version": "1.4",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/code-and-code/micro-fwk.git",
-                "reference": "7f67f98c3533b20917f05531447547d27a7870d4"
+                "reference": "b9fc7ba1ac9d59f392bf9d3570127195317d8b6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/7f67f98c3533b20917f05531447547d27a7870d4",
-                "reference": "7f67f98c3533b20917f05531447547d27a7870d4",
+                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/b9fc7ba1ac9d59f392bf9d3570127195317d8b6e",
+                "reference": "b9fc7ba1ac9d59f392bf9d3570127195317d8b6e",
                 "shasum": ""
             },
             "require": {
@@ -26,6 +26,7 @@
                 "desarrolla2/cache": "~2.0",
                 "php": ">=5.3",
                 "phpmailer/phpmailer": "^5.2",
+                "plasticbrain/php-flash-messages": "^1.0",
                 "twig/twig": "~1.0"
             },
             "type": "project",
@@ -45,7 +46,7 @@
                 "projecto inical",
                 "start"
             ],
-            "time": "2017-05-09 17:53:03"
+            "time": "2017-07-14 18:57:33"
         },
         {
             "name": "codeguy/upload",
@@ -226,21 +227,63 @@
             "time": "2017-03-15 19:32:56"
         },
         {
+            "name": "plasticbrain/php-flash-messages",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/plasticbrain/PhpFlashMessages.git",
+                "reference": "b565762619342057ce561de20d0f2f6e14f9aa77"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/plasticbrain/PhpFlashMessages/zipball/b565762619342057ce561de20d0f2f6e14f9aa77",
+                "reference": "b565762619342057ce561de20d0f2f6e14f9aa77",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Plasticbrain\\FlashMessages\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Everhart",
+                    "email": "mike@plasticbrain.net"
+                }
+            ],
+            "description": "A modern take on PHP session-based flash messages",
+            "keywords": [
+                "bootstrap",
+                "flash",
+                "messages",
+                "session"
+            ],
+            "time": "2016-04-01 08:39:38"
+        },
+        {
             "name": "twig/twig",
             "version": "1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "324ab87d2fd371a52077732f7d08c2bbd65d5b05"
+                "reference": "f1703ea411d642f5b26c81553063a3154325ed80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/324ab87d2fd371a52077732f7d08c2bbd65d5b05",
-                "reference": "324ab87d2fd371a52077732f7d08c2bbd65d5b05",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/f1703ea411d642f5b26c81553063a3154325ed80",
+                "reference": "f1703ea411d642f5b26c81553063a3154325ed80",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.7"
+                "php": ">=5.3.3"
             },
             "require-dev": {
                 "psr/container": "^1.0",
@@ -250,12 +293,15 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.33-dev"
+                    "dev-master": "1.34-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
                     "Twig_": "lib/"
+                },
+                "psr-4": {
+                    "Twig\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -285,17 +331,19 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-05-05 13:59:56"
+            "time": "2017-07-04 13:20:04"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "codeandcode/micro-fwk": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.3"
+        "php": ">=5.4"
     },
     "platform-dev": []
 }
