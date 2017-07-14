@@ -29,7 +29,7 @@ Instalação
 
 Para instalar as dependências do projeto, execute os seguintes comando:
 
-    composer create codeandcode/start
+    composer create codeandcode/start=1.0 start
     
     ou
     
