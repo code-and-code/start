@@ -1,29 +1,33 @@
 {
     "name": "codeandcode/start",
+    "type": "project",
     "license": "MIT",
+    "homepage": "https://github.com/code-and-code/start",
+    "support": {
+        "forum": "https://github.com/code-and-code/start"
+    },
     "require": {
         "php": ">=5.4",
         "codeandcode/micro-fwk": "dev-master"
      },
-    "require-dev": {
-
-    },
     "authors": [
         {
-            "name": "CodeAndCode",
+            "name": "Code&Code",
             "email": "contato@codeandcode.com.br"
+        },
+        {
+            "name": "Angelo Biscola",
+            "email": "angelo@codeandcode.com.br"
+        },
+        {
+            "name": "Adriano Vianna",
+            "email": "adrianovianna@codeandcode.com.br"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Cac\\": "vendor/codeandcode/micro-fwk",
             "App\\": "App/"
-        },
-        "files":
-        [
-            "vendor/codeandcode/micro-fwk/Helpers/Helper.php"
-        ]
+        }
     },
     "minimum-stability": "dev"
-
 }

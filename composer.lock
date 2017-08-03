@@ -4,6 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+    "hash": "98dca085be8aa14ae911da73268bb06e",
     "content-hash": "a419ddbe6c82bab3b890b5634010309e",
     "packages": [
         {
@@ -12,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/code-and-code/micro-fwk.git",
-                "reference": "1b24574c1b707bc1456aa1a8d55732df63ce90b6"
+                "reference": "95aa128af3dff142ad0f1ee1772156b388d3e0dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/1b24574c1b707bc1456aa1a8d55732df63ce90b6",
-                "reference": "1b24574c1b707bc1456aa1a8d55732df63ce90b6",
+                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/95aa128af3dff142ad0f1ee1772156b388d3e0dd",
+                "reference": "95aa128af3dff142ad0f1ee1772156b388d3e0dd",
                 "shasum": ""
             },
             "require": {
@@ -28,24 +29,36 @@
                 "plasticbrain/php-flash-messages": "^1.0",
                 "twig/twig": "~1.0"
             },
-            "type": "project",
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cac\\": " "
+                },
+                "files": [
+                    "Helpers/Helper.php"
+                ]
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
-                    "name": "CodeAndCode",
+                    "name": "Code&Code",
                     "email": "contato@codeandcode.com.br"
+                },
+                {
+                    "name": "Angelo Biscola",
+                    "email": "angelo@codeandcode.com.br"
                 }
             ],
+            "homepage": "https://github.com/code-and-code/micro-fwk",
             "keywords": [
-                "php",
-                "project start",
-                "projecto inical",
+                "framework",
+                "micro-fwk",
                 "start"
             ],
-            "time": "2017-07-17 18:58:26"
+            "time": "2017-08-03 20:31:36"
         },
         {
             "name": "codeguy/upload",
@@ -92,7 +105,7 @@
                 "upload",
                 "validation"
             ],
-            "time": "2013-07-07T17:01:41+00:00"
+            "time": "2013-07-07 17:01:41"
         },
         {
             "name": "desarrolla2/cache",
@@ -147,7 +160,7 @@
                 "mysql",
                 "redis"
             ],
-            "time": "2017-01-18T12:58:33+00:00"
+            "time": "2017-01-18 12:58:33"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -224,7 +237,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2017-07-26T21:00:20+00:00"
+            "time": "2017-07-26 21:00:20"
         },
         {
             "name": "plasticbrain/php-flash-messages",
@@ -266,7 +279,7 @@
                 "messages",
                 "session"
             ],
-            "time": "2016-04-01T08:39:38+00:00"
+            "time": "2016-04-01 08:39:38"
         },
         {
             "name": "twig/twig",
