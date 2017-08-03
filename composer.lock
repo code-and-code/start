@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b31c104ad2d04f341e74a7711d1ecb29",
     "content-hash": "a419ddbe6c82bab3b890b5634010309e",
     "packages": [
         {
@@ -13,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/code-and-code/micro-fwk.git",
-                "reference": "b9fc7ba1ac9d59f392bf9d3570127195317d8b6e"
+                "reference": "1b24574c1b707bc1456aa1a8d55732df63ce90b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/b9fc7ba1ac9d59f392bf9d3570127195317d8b6e",
-                "reference": "b9fc7ba1ac9d59f392bf9d3570127195317d8b6e",
+                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/1b24574c1b707bc1456aa1a8d55732df63ce90b6",
+                "reference": "1b24574c1b707bc1456aa1a8d55732df63ce90b6",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +45,7 @@
                 "projecto inical",
                 "start"
             ],
-            "time": "2017-07-14 18:57:33"
+            "time": "2017-07-17 18:58:26"
         },
         {
             "name": "codeguy/upload",
@@ -93,7 +92,7 @@
                 "upload",
                 "validation"
             ],
-            "time": "2013-07-07 17:01:41"
+            "time": "2013-07-07T17:01:41+00:00"
         },
         {
             "name": "desarrolla2/cache",
@@ -148,23 +147,24 @@
                 "mysql",
                 "redis"
             ],
-            "time": "2017-01-18 12:58:33"
+            "time": "2017-01-18T12:58:33+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v5.2.23",
+            "version": "v5.2.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "7115df4a6f76281109ebe352900c42403b728bb4"
+                "reference": "22d04c6a58145a244696f3f254c1875aa653b26a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/7115df4a6f76281109ebe352900c42403b728bb4",
-                "reference": "7115df4a6f76281109ebe352900c42403b728bb4",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/22d04c6a58145a244696f3f254c1875aa653b26a",
+                "reference": "22d04c6a58145a244696f3f254c1875aa653b26a",
                 "shasum": ""
             },
             "require": {
+                "ext-ctype": "*",
                 "php": ">=5.0.0"
             },
             "require-dev": {
@@ -224,7 +224,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2017-03-15 19:32:56"
+            "time": "2017-07-26T21:00:20+00:00"
         },
         {
             "name": "plasticbrain/php-flash-messages",
@@ -266,7 +266,7 @@
                 "messages",
                 "session"
             ],
-            "time": "2016-04-01 08:39:38"
+            "time": "2016-04-01T08:39:38+00:00"
         },
         {
             "name": "twig/twig",
@@ -274,12 +274,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "f1703ea411d642f5b26c81553063a3154325ed80"
+                "reference": "73ab3a1215a9e13392ae120236824a6ea5ef507a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/f1703ea411d642f5b26c81553063a3154325ed80",
-                "reference": "f1703ea411d642f5b26c81553063a3154325ed80",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/73ab3a1215a9e13392ae120236824a6ea5ef507a",
+                "reference": "73ab3a1215a9e13392ae120236824a6ea5ef507a",
                 "shasum": ""
             },
             "require": {
@@ -331,7 +331,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-07-04 13:20:04"
+            "time": "2017-08-02 18:11:46"
         }
     ],
     "packages-dev": [],
