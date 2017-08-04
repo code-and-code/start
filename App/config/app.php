@@ -34,7 +34,7 @@ return [
     'providers'=> [
 
             'App\Providers\StartProvider',
-            'App\Providers\AuthProvider',
+            'Cac\Auth\Providers\AuthProvider',
     ]
 ];
 

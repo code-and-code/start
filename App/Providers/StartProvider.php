@@ -5,7 +5,7 @@ namespace App\Providers;
 use Cac\Provider\ServiceProvider;
 use Cac\Route\Router;
 
-class StartProvider implements ServiceProvider
+class StartProvider extends  ServiceProvider
 {
     protected $namespace  = 'App\Controllers';
 
