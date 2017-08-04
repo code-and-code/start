@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../../assets/images/miniLogo.png">
 
+
     <title>{Start By Code&Code}</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
         @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400");
         @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
@@ -28,7 +29,7 @@
             overflow: hidden;
         }
 
-        .container {
+        .caixa {
             width: 900px;
             height: 400px;
             background: white;
@@ -85,13 +86,13 @@
             font-family: 'Playfair Display', serif;
         }
 
-        form {
+        .formulario {
             width: 70%;
         }
-        form > * {
+        .formulario > * {
             margin: 10px;
         }
-        form input {
+        .formulario input {
             width: 90%;
             border: 0;
             border-bottom: 1px solid rgba(195, 195, 216, 0.5);
@@ -100,11 +101,11 @@
             color: #797A9E;
             letter-spacing: 0.11em;
         }
-        form input::placeholder {
+        .formulario input::placeholder {
             color: #C3C3D8;
             font-size: 10px;
         }
-        form input:focus {
+        .formulario input:focus {
             outline: 0;
             border-bottom: 1px solid rgba(128, 155, 206, 0.7);
             transition: 0.6s all ease;
@@ -130,15 +131,25 @@
         }
 
         @media (max-width: 750px) {
-            .container {
+            .caixa {
                 transform: scale(0.8);
             }
         }
+
+
     </style>
+
 </head>
 <body>
 
-<div class="container">
+<div class="col-lg-6">
+    {% if hasMessages() == true %}
+        {{ display() }}
+    {% endif %}
+</div>
+
+<div class="caixa">
+
     <div class="message signup">
         <div class="btn-wrapper">
             <button class="button" id="signup">Cadastrar</button>
@@ -147,22 +158,21 @@
     </div>
     <div class="form form--signup">
         <div class="form--heading">Bem Vindo! Faça seu cadastro!</div>
-        <form method="post" action="/register/store" autocomplete="off">
-            <input type="text" name="email" required/>
-            <input type="password" name="password" required/>
+        <form method="post" action="/register/store" autocomplete="off" class="formulario">
+            <input type="email" name="email" required placeholder="E-mail" autofocus/>
+            <input type="password" name="password" required placeholder="Senha"/>
             <button class="button">Cadastrar</button>
         </form>
     </div>
     <div class="form form--login">
         <div class="form--heading">Bem Vindo!</div>
-        <form autocomplete="off" method="post" action="/auth/login">
-            <input type="email"    name="email"      placeholder="Email" required autofocus>
-            <input type="password" name="password"   placeholder="Senha" minlength="5" maxlength="10" required>
-            <button class="button">Login</button>
+        <form autocomplete="off" method="post" action="/auth/login"  class="formulario">
+            <input type="email"    name="email"      placeholder="E-mail" required >
+            <input type="password" name="password"   placeholder="Senha"  required>
+            <button class="button">Entrar</button>
         </form>
     </div>
 </div>
-
 
 </body>
 
@@ -170,20 +180,28 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <script>
-    $("#signup").click(function() {
-        $(".message").css("transform", "translateX(100%)");
-        if ($(".message").hasClass("login")) {
-            $(".message").removeClass("login");
-        }
-        $(".message").addClass("signup");
-    });
+    $( document ).ready(function() {
+        $('#signup').toggle();
+        $("#signup").click(function() {
+            $(".message").css("transform", "translateX(100%)");
+            if ($(".message").hasClass("login")) {
+                $(".message").removeClass("login");
+                $('#signup').toggle();
+                $('#login').toggle();
+            }
+            $(".message").addClass("signup");
+        });
 
-    $("#login").click(function() {
-        $(".message").css("transform", "translateX(0)");
-        if ($(".message").hasClass("login")) {
-            $(".message").removeClass("signup");
-        }
-        $(".message").addClass("login");
+        $("#login").click(function() {
+            $(".message").css("transform", "translateX(0)");
+            $('#signup').toggle();
+            $('#login').toggle();
+            if ($(".message").hasClass("login")) {
+                $(".message").removeClass("signup");
+            }
+            $(".message").addClass("login");
+        });
+
     });
 </script>
 

@@ -78,6 +78,10 @@
 
 <div class="container">
 
+    {% if hasMessages() == true %}
+        {{ display() }}
+    {% endif %}
+
     {% block content %}{% endblock %}
 
 </div>
