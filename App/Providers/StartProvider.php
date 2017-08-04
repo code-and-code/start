@@ -5,7 +5,7 @@ namespace App\Providers;
 use Cac\Provider\ServiceProvider;
 use Cac\Route\Router;
 
-class StartProvider extends  ServiceProvider
+class StartProvider extends ServiceProvider
 {
     protected $namespace  = 'App\Controllers';
 
@@ -28,4 +28,6 @@ class StartProvider extends  ServiceProvider
     {
         include __DIR__.'/../routes/user.php';
     }
+    
+    
 }

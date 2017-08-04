@@ -4,21 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "98dca085be8aa14ae911da73268bb06e",
-    "content-hash": "a419ddbe6c82bab3b890b5634010309e",
+    "hash": "587a18556881c1afc24274b92b0ce09e",
+    "content-hash": "a8de34bcf9dc05d6dacc617e991ba360",
     "packages": [
+        {
+            "name": "codeandcode/auth-start",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/code-and-code/auth-start.git",
+                "reference": "daf9f9cb09a9c8db1d107e02ef5237a90e207ba7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/code-and-code/auth-start/zipball/daf9f9cb09a9c8db1d107e02ef5237a90e207ba7",
+                "reference": "daf9f9cb09a9c8db1d107e02ef5237a90e207ba7",
+                "shasum": ""
+            },
+            "require": {
+                "codeandcode/micro-fwk": "dev-master",
+                "php": ">=5.4"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Cac\\Auth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Code&Code",
+                    "email": "contato@codeandcode.com.br"
+                },
+                {
+                    "name": "Adriano Vianna",
+                    "email": "adrianovianna@codeandcode.com.br"
+                }
+            ],
+            "keywords": [
+                "php",
+                "project start",
+                "projecto inical",
+                "start"
+            ],
+            "time": "2017-08-04 19:34:26"
+        },
         {
             "name": "codeandcode/micro-fwk",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/code-and-code/micro-fwk.git",
-                "reference": "95aa128af3dff142ad0f1ee1772156b388d3e0dd"
+                "reference": "00a29e8177b838e3ecf362da51f6c26982796b9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/95aa128af3dff142ad0f1ee1772156b388d3e0dd",
-                "reference": "95aa128af3dff142ad0f1ee1772156b388d3e0dd",
+                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/00a29e8177b838e3ecf362da51f6c26982796b9b",
+                "reference": "00a29e8177b838e3ecf362da51f6c26982796b9b",
                 "shasum": ""
             },
             "require": {
@@ -32,10 +78,10 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Cac\\": " "
+                    "Cac\\": "src/"
                 },
                 "files": [
-                    "Helpers/Helper.php"
+                    "src/Helpers/Helper.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -58,7 +104,7 @@
                 "micro-fwk",
                 "start"
             ],
-            "time": "2017-08-03 20:31:36"
+            "time": "2017-08-04 19:21:27"
         },
         {
             "name": "codeguy/upload",
@@ -351,7 +397,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "codeandcode/micro-fwk": 20
+        "codeandcode/micro-fwk": 20,
+        "codeandcode/auth-start": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
