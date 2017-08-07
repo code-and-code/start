@@ -1,4 +1,4 @@
-![alt text](http://blog.codeandcode.com.br/wp-content/uploads/2017/07/Captura-de-Tela-2017-07-05-%C3%A0s-15.46.33.png)
+![alt text](http://blog.codeandcode.com.br/wp-content/uploads/2017/08/start2.png)
 
 Comece sua viagem no mundo da programação WEB, com PHP + MVC.
 
@@ -169,33 +169,40 @@ Exemplo - Relacionamento
 
 #### 5 - Sistema de Rotas 
 
-Localizado no diretório [App\Init.php]
-    
-    $ar['user.index']    = ['route' => '/',  'method' => 'GET', 'controller' => 'Index', 'auth' => true ,'action' => 'index'];
-    
-    Componentes
-    
-        'auth' -> requer um usuário autenticado 
-        'user.index' -> indice (apelido da rota). Obs: Não pode haver duplicidade no mesmo módulo
-        'route' -> url
-        'controller' -> nome Controller
-        'action' -> método que será executado na controller
-        'method' -> tipo da requisição
-        
-Exemplo:
-    
-    <?php
-    namespace App;
-    use Cac\Init\Bootstrap;
+Uma Application Service Provider proverá o sistema de rotas. 
 
-    class Init extends Bootstrap
+Localizada no diretório [App\Providers\StartProvider.php]
+
+    Na classe StartProvider é possível mapear as rotas separadamente, sendo que o método boot() deve executar as rotas. 
+    
+    Exemplo:
+    
+    class StartProvider extends  ServiceProvider
     {
-        protected function initRoutes()
+        protected $namespace  = 'App\Controllers';
+
+        public function boot()
         {
-            $ar['user.index'] = ['route' => '/',                              'controller' => 'AuthController',  'action' => 'index'];
-            $ar['user.upload'] = ['route' => '/auth/login', 'method'=>'POST', 'controller' => 'AuthController',  'action'=>'upload' ];
+            $this->mapRoutes();
+            $this->userRoutes();
+        }
+
+        public function mapRoutes()
+        {
+            //pode passar as rotas no metodo
+            Router::get(['route' => '/',        'namespace' => $this->namespace,'controller' => 'HomeController','action' => 'index']);
+        }
+
+        /*
+         * exemplo por arqui externo
+         */
+        public function userRoutes()
+        {
+            //pode criar um arquivo com as rotas separadamente e incluir esse arquivo no método
+            include __DIR__.'/../routes/user.php';
         }
     }
+
 
 #### 6 - Controller
 
@@ -442,5 +449,73 @@ O sistema inclui uma variedade de funções globais “helper” PHP. Muitas des
              $obj->email = 'teste@teste.com';
              $array = objectToArray($obj);
              echo $array['email'];
-             
             
+#### 12 - Application Service Provider
+
+É possível criar providers para promover serviços e configurações. 
+Para isso basta criar uma classe que extende de uma classe ServiceProvider, como mostra o exemplo a baixo.
+Porém é obrigatório a existencias dos métodos públicos: 
+
+    boot()
+    mapRoutes()
+    
+    Exemplo:
+    
+    <?php
+    namespace App\Providers;
+    use Cac\Provider\ServiceProvider;
+    
+    class StartProvider extends  ServiceProvider
+    {
+        protected $namespace  = 'App\Controllers';
+
+        public function boot()
+        {
+            $this->mapRoutes();
+            $this->userRoutes();
+        }
+
+        public function mapRoutes()
+        {
+            ** Código ** 
+        }
+    }
+
+#### 13 - Fash Message
+
+Para disparar notificações (alertas) para o usuário, usasse a função "back()" passando por parametro a mensagem e o tipo dela. 
+Essa função voltará a tela anterior informando a menssagem. 
+
+Tipos de mesnssagens : error, success, warning, info
+
+    Exemplo :
+    
+    public function umMetodoNaController()
+    {
+        try{
+            **realiza uma operação**
+            return back('Operação realizada com sucesso!!! :) ', 'success');
+        }catch (\Exception $e){
+            return back($e->getMessage(), 'error');
+        }
+    }
+
+#### 14 - Validation
+
+Para uma validação mais complexa dos atributos da classe que considera obrigatório, é necessário adcionar mais um atributo a sua model.
+
+    public    $requested  = [];
+    
+A variável $request recebe um array, com os atributos que devem ser obrigadorios da classe.
+
+    Exemplo : 
+    <?php
+    namespace App\Models;
+    use Cac\Model\Model;
+
+    class User extends Model {
+
+    protected $table      = "users";
+    public    $requested  = ['nome', 'email'];
+    
+    }
