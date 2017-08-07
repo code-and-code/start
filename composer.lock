@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "587a18556881c1afc24274b92b0ce09e",
-    "content-hash": "a8de34bcf9dc05d6dacc617e991ba360",
+    "hash": "bd207762ce0508c36a137fb6fccde7d7",
+    "content-hash": "46137410723e1216fbed2cd648ded6fc",
     "packages": [
         {
             "name": "codeandcode/auth-start",
@@ -105,6 +105,52 @@
                 "start"
             ],
             "time": "2017-08-04 19:21:27"
+        },
+        {
+            "name": "codeandcode/simplebase-start",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/code-and-code/simplebase-start.git",
+                "reference": "30df8b814ff364a7f2511bf457f9ed9ddbb510b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/code-and-code/simplebase-start/zipball/30df8b814ff364a7f2511bf457f9ed9ddbb510b3",
+                "reference": "30df8b814ff364a7f2511bf457f9ed9ddbb510b3",
+                "shasum": ""
+            },
+            "require": {
+                "codeandcode/micro-fwk": "dev-master",
+                "php": ">=5.4"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Cac\\SimpleBase\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Code&Code",
+                    "email": "contato@codeandcode.com.br"
+                },
+                {
+                    "name": "Angelo Biscola",
+                    "email": "angelo@codeandcode.com.br"
+                }
+            ],
+            "keywords": [
+                "php",
+                "project start",
+                "projecto inical",
+                "start"
+            ],
+            "time": "2017-08-07 18:33:36"
         },
         {
             "name": "codeguy/upload",
@@ -398,7 +444,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "codeandcode/micro-fwk": 20,
-        "codeandcode/auth-start": 20
+        "codeandcode/auth-start": 20,
+        "codeandcode/simplebase-start": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

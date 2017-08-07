@@ -1,8 +1,6 @@
 <?php
 namespace App\Models;
 
-use Cac\Model\Model;
-
 class Friend extends Model {
 
     protected $table      = "friends";

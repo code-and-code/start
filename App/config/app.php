@@ -8,7 +8,13 @@ return [
     'database' => [ 'host'     => '127.0.0.1',
         'dbname'   => 'start',
         'username' => 'root',
-        'password' =>  '123456'
+        'password' =>  '123456',
+
+
+        'mysql' => [ 'host'    => '127.0.0.1',
+                    'dbname'   => 'start',
+                    'username' => 'root',
+                    'password' =>  '123456']
     ],
 
     'layout' => [

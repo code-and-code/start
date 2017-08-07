@@ -9,7 +9,8 @@
     "require": {
         "php": ">=5.4",
         "codeandcode/micro-fwk":  "dev-master",
-        "codeandcode/auth-start": "dev-master"
+        "codeandcode/auth-start": "dev-master",
+        "codeandcode/simplebase-start": "dev-master"
      },
     "authors": [
         {

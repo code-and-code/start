@@ -1,8 +1,6 @@
 <?php
 namespace App\Models;
 
-use Cac\Model\Model;
-
 class Profile extends Model {
 
     protected $table      = "profiles";
