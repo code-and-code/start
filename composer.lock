@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bd207762ce0508c36a137fb6fccde7d7",
+    "hash": "021bcac3e5cfb1febf05c33e2e1f759c",
     "content-hash": "46137410723e1216fbed2cd648ded6fc",
     "packages": [
         {
@@ -59,12 +59,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/code-and-code/micro-fwk.git",
-                "reference": "00a29e8177b838e3ecf362da51f6c26982796b9b"
+                "reference": "d371712a530316e55e6d0aa7b9dd50c413a75eba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/00a29e8177b838e3ecf362da51f6c26982796b9b",
-                "reference": "00a29e8177b838e3ecf362da51f6c26982796b9b",
+                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/d371712a530316e55e6d0aa7b9dd50c413a75eba",
+                "reference": "d371712a530316e55e6d0aa7b9dd50c413a75eba",
                 "shasum": ""
             },
             "require": {
@@ -104,7 +104,7 @@
                 "micro-fwk",
                 "start"
             ],
-            "time": "2017-08-04 19:21:27"
+            "time": "2017-08-07 18:48:05"
         },
         {
             "name": "codeandcode/simplebase-start",

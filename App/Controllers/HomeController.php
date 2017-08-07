@@ -7,7 +7,7 @@ class HomeController extends Action
 {
     public function index()
     {
-        echo $this->render('home.index', []);
+        echo $this->render('home.index2', []);
     }
 
     public function contact()
