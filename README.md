@@ -243,6 +243,7 @@ Helpers
     include() -> inclue uma view
     extends -> extende uma view
     block -> sessão reservada no HTML
+    display() -> dispara o alerta na tela
     
     Mais informações https://github.com/twigphp/Twig
  
@@ -483,7 +484,7 @@ Porém é obrigatório a existencias dos métodos públicos:
 
 #### 13 - Fash Message
 
-Para disparar notificações (alertas) para o usuário, usasse a função "back()" passando por parametro a mensagem e o tipo dela. 
+Para disparar notificações (alertas) para o usuário, usasse a função "back() ou alert()" passando por parametro a mensagem e o tipo dela. 
 Essa função voltará a tela anterior informando a menssagem. 
 
 Tipos de mesnssagens : error, success, warning, info
@@ -495,10 +496,17 @@ Tipos de mesnssagens : error, success, warning, info
         try{
             **realiza uma operação**
             return back('Operação realizada com sucesso!!! :) ', 'success');
+            
         }catch (\Exception $e){
             return back($e->getMessage(), 'error');
         }
     }
+    
+Na View principal, coloque o codigo abaixo que ficará escutando as menssagens :
+
+     {% if hasMessages() == true %}
+        {{ display() }}
+    {% endif %}
 
 #### 14 - Validation
 
@@ -519,3 +527,10 @@ A variável $request recebe um array, com os atributos que devem ser obrigadorio
     public    $requested  = ['nome', 'email'];
     
     }
+
+OU fazer a chamada do metodo, passando o nome dos campos que quer verificar na determinada requisição.
+
+    Exemplo:
+    
+    Validation::requiredBasic(['nome','email'], $_REQUEST);
+    
