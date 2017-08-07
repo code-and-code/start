@@ -169,33 +169,40 @@ Exemplo - Relacionamento
 
 #### 5 - Sistema de Rotas 
 
-Localizado no diretório [App\Init.php]
-    
-    $ar['user.index']    = ['route' => '/',  'method' => 'GET', 'controller' => 'Index', 'auth' => true ,'action' => 'index'];
-    
-    Componentes
-    
-        'auth' -> requer um usuário autenticado 
-        'user.index' -> indice (apelido da rota). Obs: Não pode haver duplicidade no mesmo módulo
-        'route' -> url
-        'controller' -> nome Controller
-        'action' -> método que será executado na controller
-        'method' -> tipo da requisição
-        
-Exemplo:
-    
-    <?php
-    namespace App;
-    use Cac\Init\Bootstrap;
+Uma Application Service Provider proverá o sistema de rotas. 
 
-    class Init extends Bootstrap
+Localizada no diretório [App\Providers\StartProvider.php]
+
+    Na classe StartProvider é possível mapear as rotas separadamente, sendo que o método boot() deve enxergar as rotas. 
+    
+    Exemplo:
+    
+    class StartProvider extends  ServiceProvider
     {
-        protected function initRoutes()
+        protected $namespace  = 'App\Controllers';
+
+        public function boot()
         {
-            $ar['user.index'] = ['route' => '/',                              'controller' => 'AuthController',  'action' => 'index'];
-            $ar['user.upload'] = ['route' => '/auth/login', 'method'=>'POST', 'controller' => 'AuthController',  'action'=>'upload' ];
+            $this->mapRoutes();
+            $this->userRoutes();
+        }
+
+        public function mapRoutes()
+        {
+            //pode passar as rotas no metodo
+            Router::get(['route' => '/',        'namespace' => $this->namespace,'controller' => 'HomeController','action' => 'index']);
+        }
+
+        /*
+         * exemplo por arqui externo
+         */
+        public function userRoutes()
+        {
+            //pode criar um arquivo com as rotas separadamente e incluir esse arquivo no método
+            include __DIR__.'/../routes/user.php';
         }
     }
+
 
 #### 6 - Controller
 
