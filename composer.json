@@ -28,7 +28,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "App\\": "App/"
+            "App\\": "App/",
+            "Cac\\Auth\\": "vendor/codeandcode/auth-start/src"
+
         }
     },
     "minimum-stability": "dev"

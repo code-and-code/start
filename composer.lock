@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "021bcac3e5cfb1febf05c33e2e1f759c",
     "content-hash": "46137410723e1216fbed2cd648ded6fc",
     "packages": [
         {
@@ -197,7 +196,7 @@
                 "upload",
                 "validation"
             ],
-            "time": "2013-07-07 17:01:41"
+            "time": "2013-07-07T17:01:41+00:00"
         },
         {
             "name": "desarrolla2/cache",
@@ -252,7 +251,7 @@
                 "mysql",
                 "redis"
             ],
-            "time": "2017-01-18 12:58:33"
+            "time": "2017-01-18T12:58:33+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -329,7 +328,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2017-07-26 21:00:20"
+            "time": "2017-07-26T21:00:20+00:00"
         },
         {
             "name": "plasticbrain/php-flash-messages",
@@ -371,7 +370,7 @@
                 "messages",
                 "session"
             ],
-            "time": "2016-04-01 08:39:38"
+            "time": "2016-04-01T08:39:38+00:00"
         },
         {
             "name": "twig/twig",
