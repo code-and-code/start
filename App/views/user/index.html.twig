@@ -1,21 +1,38 @@
 {% extends view('app') %}
 
 {% block content %}
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                    </div>
-                    <div class="panel-body">
-                        Bem vindo <b> {{ auth().email }} </b>
-                    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Usuários</h4>
+                    <p class="category">Teste BANCO DE DADOS <a href="/user/novo" class="fa fa-plus pull-right"></a></p>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <th>ID</th>
+                        <th>E-mail</th>
+                        <th>Nome</th>
+                        <th>Sobre nome</th>
+                        <th>#</th>
+                        </thead>
+                        <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.Profile.name }}</td>
+                            <td>{{ user.Profile.last_name }}</td>
+                            <td><a href="/admin/user/delete/{{user.id}}" class="btn btn-simple"><i class="fa fa-trash"></i></a></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-
 {% endblock %}
 
 

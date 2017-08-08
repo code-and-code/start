@@ -59,12 +59,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/code-and-code/micro-fwk.git",
-                "reference": "0bca91eaf4d0706f17de927253179674085f9a29"
+                "reference": "14fa0e83b584944f3364c5c1a04144cd95ec8a33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/0bca91eaf4d0706f17de927253179674085f9a29",
-                "reference": "0bca91eaf4d0706f17de927253179674085f9a29",
+                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/14fa0e83b584944f3364c5c1a04144cd95ec8a33",
+                "reference": "14fa0e83b584944f3364c5c1a04144cd95ec8a33",
                 "shasum": ""
             },
             "require": {
@@ -104,7 +104,7 @@
                 "micro-fwk",
                 "start"
             ],
-            "time": "2017-08-08 12:54:45"
+            "time": "2017-08-08 18:40:40"
         },
         {
             "name": "codeandcode/simplebase-start",

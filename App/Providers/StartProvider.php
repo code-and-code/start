@@ -13,6 +13,7 @@ class StartProvider extends ServiceProvider
     {
         $this->mapRoutes();
         $this->userRoutes();
+        $this->adminRoutes();
     }
 
     public function mapRoutes()
@@ -28,6 +29,10 @@ class StartProvider extends ServiceProvider
     {
         include __DIR__.'/../routes/user.php';
     }
-    
-    
+
+    public function adminRoutes()
+    {
+        include __DIR__.'/../routes/admin.php';
+    }
+       
 }

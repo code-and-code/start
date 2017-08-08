@@ -2,8 +2,9 @@
 
 use Cac\Route\Router;
 
-
-Router::get(['route' => '/user',           'namespace' => $this->namespace,'controller' => 'UserController', 'auth' =>true, 'action' => 'index']);
-Router::get(['route' => '/user/edit/$id',  'namespace' => $this->namespace,'controller' => 'UserController', 'auth' =>true, 'action' => 'edit']);
+Router::get(['route'  => '/admin/user',              'namespace' => $this->namespace,'controller' => 'UserController', 'auth' =>false,  'action' => 'index' ]);
+Router::get(['route'  => '/admin/user/create',       'namespace' => $this->namespace,'controller' => 'UserController', 'auth' =>false,  'action' => 'create']);
+Router::post(['route' => '/admin/user/store',        'namespace' => $this->namespace,'controller' => 'UserController', 'auth' =>false,  'action' => 'store' ]);
+Router::get(['route' => '/admin/user/delete/$var', 'namespace' => $this->namespace,'controller' => 'UserController', 'auth' =>false,  'action' => 'delete']);
 
 

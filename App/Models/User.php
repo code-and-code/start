@@ -4,6 +4,7 @@ namespace App\Models;
 class User extends Model {
 
     protected $table      = "users";
+    public    $requested  = ['email','password'];
 
     public function Profile()
     {
