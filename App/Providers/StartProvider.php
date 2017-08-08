@@ -17,9 +17,8 @@ class StartProvider extends ServiceProvider
 
     public function mapRoutes()
     {
-        //injetar rotas
-        Router::get(['route' => '/',        'namespace' => $this->namespace,'controller' => 'HomeController','action' => 'index']);
-        Router::get(['route' => '/contact', 'namespace' => $this->namespace,'controller' => 'HomeController','action' => 'contact']);
+        Router::get(['route' => '/',      'namespace' => $this->namespace,'controller' => 'HomeController','action' => 'index']);
+        Router::post(['route' => '/send', 'namespace' => $this->namespace,'controller' => 'HomeController','action' => 'send']);
     }
 
     /*
@@ -27,7 +26,6 @@ class StartProvider extends ServiceProvider
      */
     public function userRoutes()
     {
-        //passar arquivos de rotas
         include __DIR__.'/../routes/user.php';
     }
     

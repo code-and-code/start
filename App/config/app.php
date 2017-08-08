@@ -1,20 +1,18 @@
 <?php
 
 return [
-    
-    'public'    => false,
+
+    'public'   => false,
+    'url'      => 'http://127.0.0.1:8080',
     'timezone' => 'UTC',
 
-    'database' => [ 'host'     => '127.0.0.1',
-        'dbname'   => 'start',
-        'username' => 'root',
-        'password' =>  '123456',
-
+    'database' => [
 
         'mysql' => [ 'host'    => '127.0.0.1',
-                    'dbname'   => 'start',
-                    'username' => 'root',
-                    'password' =>  '123456']
+            'dbname'   => 'start',
+            'username' => 'root',
+            'password' =>  '123456'
+        ]
     ],
 
     'layout' => [
@@ -34,13 +32,13 @@ return [
     ],
 
     'log'  => [ 'file' => 'main.log',
-    'folder' => '../storage/log',
+        'folder' => '../storage/log',
     ],
 
     'providers'=> [
 
-            'App\Providers\StartProvider',
-            'Cac\Auth\Providers\AuthProvider',
+        'App\Providers\StartProvider',
+        'Cac\Auth\Providers\AuthProvider',
     ]
 ];
 
