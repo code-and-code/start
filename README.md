@@ -191,6 +191,9 @@ Localizada no diretório [App\Providers\StartProvider.php]
         {
             //pode passar as rotas no metodo
             Router::get(['route' => '/',        'namespace' => $this->namespace,'controller' => 'HomeController','action' => 'index']);
+            
+            //pode passar parametros na rota 
+            Router::get(['route' => '/$id',     'namespace' => $this->namespace,'controller' => 'HomeController','action'=>'index']);
         }
 
         /*
