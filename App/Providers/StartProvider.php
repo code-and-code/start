@@ -17,8 +17,8 @@ class StartProvider extends ServiceProvider
 
     public function mapRoutes()
     {
-        Router::get(['route' => '/',        'namespace' => $this->namespace,'controller' => 'HomeController','action' => 'index']);
-        Router::get(['route' => '/contact', 'namespace' => $this->namespace,'controller' => 'HomeController','action' => 'contact']);
+        Router::get(['route' => '/',      'namespace' => $this->namespace,'controller' => 'HomeController','action' => 'index']);
+        Router::post(['route' => '/send', 'namespace' => $this->namespace,'controller' => 'HomeController','action' => 'send']);
     }
 
     /*

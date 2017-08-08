@@ -1,11 +1,11 @@
 <?php
 return [
-            'default' =>    [  'Host' => 'smtp.teste.com.br',
-                               'Port' => 587,
-                               'SMTPSecure' => 'tls',
-                               'SMTPAuth' => true,
-                               'SMTPDebug'=>false,
-                               'Username' => 'email@email.com.br',
-                               'Password' => 'email'
-            ]
+    'default' =>    [   'Host' => 'smtp.umbler.com',
+                        'Port' => 587,
+                        'SMTPSecure' => 'tls',
+                        'SMTPAuth' => true,
+                        'SMTPDebug'=>false,
+                        'Username' => 'contato@codeandcode.com.br',
+                        'Password' => 'info1605'
+    ]
 ];
