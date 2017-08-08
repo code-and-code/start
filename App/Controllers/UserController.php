@@ -23,9 +23,4 @@ class UserController extends Action
     {
         echo $this->render('user.edit');
     }
-
-    public function update()
-    {
-
-    }
 }
