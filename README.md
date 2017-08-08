@@ -244,6 +244,7 @@ Helpers
     extends -> extende uma view
     block -> sessão reservada no HTML
     display() -> dispara o alerta na tela
+    assets() -> busca arquivos no diretorio [public/assets]
     
     Mais informações https://github.com/twigphp/Twig
  
@@ -302,7 +303,7 @@ new Mail('endereço_que_será_enviado', HTML(renderizado) ou  menssagem, 'Títul
         {
             public function sendEmail()
             {
-                $mail = new Mail('para@dominio.com.br', 'Menssagem', 'Título', false);
+                 new Mail(['email@dominio.com.br' => 'Nome'], "Menssagem", 'Assunto', false);
             }
         }
     
@@ -322,7 +323,7 @@ Como desparar email com mensagem em HTML.
             public function sendEmail()
             {
                 $html  = $this->render('site.email.answer');
-                $mail = new Mail('para@dominio.com.br', $html, 'Título', true);
+                new Mail(['email@dominio.com.br' => 'Nome'], $html, 'Assunto', true);
             }
         }
         
@@ -450,6 +451,20 @@ O sistema inclui uma variedade de funções globais “helper” PHP. Muitas des
              $obj->email = 'teste@teste.com';
              $array = objectToArray($obj);
              echo $array['email'];
+            
+     assets() -> Carrega arquivos disponíveis no diretório [Public/assets]. Geralmente usado na view.
+        
+        Ex: <link rel="stylesheet" href="{{ assets('home/css/main.css') }}"/>
+        
+        A configuração para URL raiz '/' fica no diretório [App/config/app], quando for para produção deve trocar o valor da posição 'url' para novo dominio.
+        
+        'url'      => 'http://127.0.0.1:8080'
+        
+     dd() -> Mostra informações sobre o objeto ou variável, substitui a função nativa do php "var_dump"
+     
+        Ex: dd($obj);
+        
+     
             
 #### 12 - Application Service Provider
 
