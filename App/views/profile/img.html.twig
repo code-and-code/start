@@ -1,0 +1,26 @@
+<div class="col-md-4">
+    <div class="card card-user">
+        <div class="image">
+            <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
+        </div>
+        <div class="content">
+            <div class="author">
+                <a href="#">
+                    <img class="avatar border-gray" src="{{ assets('profile/avatar/')}}{{profile.file }}" alt="..."/>
+
+                    <h4 class="title">{{ profile.name }}<br />
+                        <small>{{ profile.user.email }}</small>
+                    </h4>
+                </a>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center">
+            <a href="/admin/user/profile/sendimage/{{ profile.id }}" class="btn btn-simple" title="enviar image"><i class="fa fa-upload"></i></a>
+            <a href="/admin/user/profile/deleteimage/{{ profile.id }}" class="btn btn-simple" title="deletar image"><i class="fa fa-trash"></i></a>
+        </div>
+    </div>
+</div>
+
+
+

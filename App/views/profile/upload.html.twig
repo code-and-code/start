@@ -1,0 +1,33 @@
+{% extends view('app') %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Image Perfil</h4>
+                </div>
+                <div class="content">
+                    <form method="POST" action="/admin/user/profile/uploadimage/{{ profile.id }}" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Image</label>
+                                    <input type="file" class="form-control" name="file">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-info btn-fill pull-right">Enviar</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% include(view('profile.img')) %}
+    </div>
+
+{% endblock %}
+
+
+

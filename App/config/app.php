@@ -24,7 +24,7 @@ return [
     ],
 
     'file'  => [
-        'folder' => 'images'
+        'folder' => '../public/assets/profile'
     ],
 
     'cache'  => [ 'active' => true,

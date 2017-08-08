@@ -39,6 +39,7 @@ CREATE TABLE `profiles` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
+  `file` varchar(255) DEFAULT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
