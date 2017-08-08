@@ -1,9 +1,9 @@
 <?php
 namespace App\Controllers\Auth;
 
-use Cac\Auth\Auth;
+use Cac\Auth\Authentication\Authenticate;
 
-class AuthController extends Auth
+class AuthController extends Authenticate
 {
     public function __construct()
     {
@@ -19,4 +19,7 @@ class AuthController extends Auth
     {
         echo $this->render('auth.register');
     }
+
+
+
 }

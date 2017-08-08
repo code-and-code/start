@@ -2459,7 +2459,7 @@
 			position: absolute;
 			left: 0;
 			top: 0;
-			background-image: url("images/fundo1.png");
+			background-image: url("images/screenshot107.png");
 			width: 100%;
 			height: 100%;
 			z-index: 1;
@@ -3393,11 +3393,11 @@
 
 			#banner .content .image {
 				border-radius: 100%;
-				display: inline-block;
-				height: 18em;
+				display: inline-flex;
+				height: 17em;
 				margin-left: 3em;
 				vertical-align: middle;
-				width: 18em;
+				width: 17em;
 			}
 
 				#banner .content .image img {
