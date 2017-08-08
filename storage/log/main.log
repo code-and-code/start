@@ -3,3 +3,8 @@
 [2017-08-08 17:42:02] [ERROR]: App\Models\UserNão uma ESTANCIA de MODEL
 [2017-08-08 17:42:05] [ERROR]: App\Models\UserNão uma ESTANCIA de MODEL
 [2017-08-08 17:48:36] [ERROR]: Erro de validação
+[2017-08-08 19:32:37] [ERROR]: Compos REQUIRIDOS,não foi configurado no CLASS: App\Models\Profile
+[2017-08-08 19:32:39] [ERROR]: Compos REQUIRIDOS,não foi configurado no CLASS: App\Models\Profile
+[2017-08-08 19:32:41] [ERROR]: Compos REQUIRIDOS,não foi configurado no CLASS: App\Models\Profile
+[2017-08-08 19:32:50] [ERROR]: Compos REQUIRIDOS,não foi configurado no CLASS: App\Models\Profile
+[2017-08-08 19:33:49] [ERROR]: Erro de validação

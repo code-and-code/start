@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\Profile;
 use App\Models\User;
 use Cac\Controller\Action;
 use Cac\Exception\ModelException;
@@ -8,11 +9,12 @@ use Cac\Support\Validation;
 
 class UserController extends Action
 {
-    private $user;
+    private $user,$profile;
 
     public function __construct()
     {
-        $this->user = new User();
+        $this->user     = new User();
+        $this->profile  = new Profile();
     }
 
     public function index()
@@ -30,7 +32,9 @@ class UserController extends Action
         try{
 
             Validation::requireModel($this->user,$_POST);
-            $this->user->create($_POST);
+            $profile  = $this->profile->create([]);
+            $new_user = array_merge($_POST,['profile_id' => $profile->id]);
+            $this->user->create($new_user);
             back('Gravado');
 
         }catch (\Exception $e)

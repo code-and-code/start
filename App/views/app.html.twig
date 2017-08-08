@@ -43,16 +43,15 @@
                     Start
                 </a>
             </div>
-
             <ul class="nav">
-                <li class="active">
+                <li>
                     <a href="/admin">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/user">
+                    <a href="/admin/user">
                         <i class="pe-7s-user"></i>
                         <p>Usuários</p>
                     </a>
@@ -105,20 +104,12 @@
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something</a></li>
+                                <li><a href="/admin/user/profile/edit/{{ auth().Profile.id }}">Perfil</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
+                                <li><a href="/auth/logout">Sair</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="/auth/logout">
-                                Sair
-                            </a>
-                        </li>
+
                         {% endif %}
                     </ul>
                 </div>
