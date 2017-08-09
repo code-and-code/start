@@ -8,5 +8,5 @@ return [
                         'Username' => 'start@start.com.br',
                         'Password' => 'start'
     ],
-    'contact'  => ['start@start.com.br','Start']
+    'contact'  => ['start@start.com.br' => 'Start']
 ];
