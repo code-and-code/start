@@ -33,7 +33,7 @@ Para instalar as dependências do projeto, execute os seguintes comando:
     
     ou
     
-    git clone -b 1.0 https://github.com/code-and-code/start.git
+    git clone https://github.com/code-and-code/start.git
     cd start
     composer install 
     
