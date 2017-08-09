@@ -78,29 +78,27 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-globe"></i>
                                 <b class="caret"></b>
-                                <span class="notification">2</span>
+                                <span class="notification">1</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Notificação</a></li>
-                                <li><a href="#">Notificação</a></li>
+                                <li><a href="#">Bem vindo!</a></li>
                             </ul>
                         </li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/">
+                                Home
+                            </a>
+                        </li>
 
                         {% if guest() == true %}
-                            <li>
-                                <a href="/admin/user/create">
-                                    Criar conta
-                                </a>
-                            </li>
                             <li>
                                 <a href="/auth">
                                     Entrar
                                 </a>
                             </li>
-
                         {% else %}
 
                         <li class="dropdown">
@@ -109,7 +107,7 @@
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="/admin/user/profile/edit/{{ auth().Profile.id }}">Perfil</a></li>
+                                <li><a href="/admin/user/profile/edit">Perfil</a></li>
                                 <li class="divider"></li>
                                 <li><a href="/auth/logout">Sair</a></li>
                             </ul>
@@ -136,7 +134,7 @@
         <footer class="footer">
             <div class="container-fluid">
                 <p class="copyright pull-right">
-                    &copy; 2016 <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                    &copy; 2016 <a href="https://codeandcode.com.br">Code&Code</a>
                 </p>
             </div>
         </footer>

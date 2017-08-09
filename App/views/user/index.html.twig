@@ -21,7 +21,7 @@
                         {% for user in users %}
                         <tr>
                             <td>{{ user.id }}</td>
-                            <td>{{ user.email }}</td>
+                            <td><a href="/admin/user/profile/edit">{{ user.email }}</a></td>
                             <td>{{ user.Profile.name }}</td>
                             <td>{{ user.Profile.last_name }}</td>
                             <td><a href="/admin/user/delete/{{user.id}}" class="btn btn-simple"><i class="fa fa-trash"></i></a></td>

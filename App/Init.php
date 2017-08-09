@@ -22,7 +22,6 @@ class Init extends Bootstrap
         $ar['user.index']     = ['route' => '/user',         'controller' => 'UserController', 'method'=>'GET', 'auth' =>true, 'action' => 'index'];
         $ar['user.edit']      = ['route' => '/user/edit',    'controller' => 'UserController', 'method'=>'GET', 'auth' =>true, 'action' => 'edit'];
 
-
         $this->setRoutes($ar);
     }
 

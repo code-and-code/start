@@ -10,15 +10,27 @@ use Cac\Support\Validation;
 class ProfileController extends Action
 {
     private $profile;
+    private $path;
 
     public function __construct()
     {
         $this->profile = new Profile();
+        $this->path    = config('app.file.folder').'/avatar';
     }
 
-    public function edit($id)
+    public function edit()
     {
-        echo $this->render('profile.edit',['profile' => $this->profile->find($id)]);
+        $user = auth();
+        if($user->Profile())
+        {
+            echo $this->render('profile.edit',['profile' => $user->Profile()]);
+        }
+        else
+        {
+            $profile = $this->profile->create([]);
+            $user->update(['profile_id' => $profile->id]);
+            echo $this->render('profile.edit',['profile' => $user->Profile()]);
+        }
     }
 
     public function update($id)
@@ -47,14 +59,27 @@ class ProfileController extends Action
 
     public function uploadImage($id)
     {
-        $path = config('app.file.folder');
-      try{
 
-            $file       = new File($_FILES['file'],"$path/avatar");
+        try{
+
+            $profile = $this->profile->find($id);
+
+            if($profile != null)
+            {
+                unlink("{$this->path}/$profile->file");
+            }
+
+            $file       = new File($_FILES['file'],$this->path);
+
             $nameFile   = md5(date('H:m:s:'));
-            $file->setName($nameFile)->mimeType(['image/png','image/jpeg', 'image/jpg'])->maxSize('3MB')->upload();
+            $file->setName($nameFile)
+                 ->mimeType(['image/png','image/jpeg', 'image/jpg'])
+                 ->maxSize('1MB')
+                 ->upload();
+
             $profile = $this->profile->find($id);
             $profile->update(['file' => "{$nameFile}.{$file->getData()->extension}"]);
+
             back('Enviado');
 
         }catch (\Exception $e)
@@ -65,11 +90,17 @@ class ProfileController extends Action
             }
             back($e->getMessage(),'warning');
         }
-
     }
 
     public function deleteImage($id)
     {
-        unlink();
+        try{
+            $profile = $this->profile->find($id);
+            unlink("{$this->path}/$profile->file");
+            back('Enviado');
+        }catch (\Exception $e)
+        {
+            back($e->getMessage(),'warning');
+        }
     }
 }
