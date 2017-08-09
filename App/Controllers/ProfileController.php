@@ -29,7 +29,7 @@ class ProfileController extends Action
         {
             $profile = $this->profile->create([]);
             $user->update(['profile_id' => $profile->id]);
-            echo $this->render('profile.edit',['profile' => $user->Profile()]);
+            echo $this->render('profile.edit',['profile' => $profile]);
         }
     }
 
