@@ -12,6 +12,9 @@ class ProfileController extends Action
     private $profile;
     private $path;
 
+    /**
+     * ProfileController constructor.
+     */
     public function __construct()
     {
         $this->profile = new Profile();
