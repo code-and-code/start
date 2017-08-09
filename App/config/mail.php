@@ -1,11 +1,12 @@
 <?php
 return [
-    'default' =>    [   'Host' => 'smtp.umbler.com',
+    'default' =>    [   'Host' => 'smtp.start.com',
                         'Port' => 587,
                         'SMTPSecure' => 'tls',
                         'SMTPAuth' => true,
                         'SMTPDebug'=>false,
-                        'Username' => 'contato@codeandcode.com.br',
-                        'Password' => 'info1605'
-    ]
+                        'Username' => 'start@start.com.br',
+                        'Password' => 'start'
+    ],
+    'contact'  => ['start@start.com.br','Start']
 ];

@@ -14,7 +14,7 @@ class HomeController extends Action
     public function send()
     {
         $email = $_POST['email'];
-        new Mail(['contato@codeandcode.com.br' => 'Start'], "Essa pessoa quer ajuda, e-mail: {$email}", 'Ajuda Start', false);
+        new Mail(config('mail.contact'), "Essa pessoa quer ajuda, e-mail: {$email}", 'Ajuda Start', false);
         return back();
     }
 
