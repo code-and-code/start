@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ab2fd266e959aef0a4feff907bf57b84",
     "content-hash": "46137410723e1216fbed2cd648ded6fc",
     "packages": [
         {
@@ -59,12 +58,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/code-and-code/micro-fwk.git",
-                "reference": "14fa0e83b584944f3364c5c1a04144cd95ec8a33"
+                "reference": "af10cfdf5eed294ef16a16197aa6d65a917c4b8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/14fa0e83b584944f3364c5c1a04144cd95ec8a33",
-                "reference": "14fa0e83b584944f3364c5c1a04144cd95ec8a33",
+                "url": "https://api.github.com/repos/code-and-code/micro-fwk/zipball/af10cfdf5eed294ef16a16197aa6d65a917c4b8d",
+                "reference": "af10cfdf5eed294ef16a16197aa6d65a917c4b8d",
                 "shasum": ""
             },
             "require": {
@@ -104,7 +103,7 @@
                 "micro-fwk",
                 "start"
             ],
-            "time": "2017-08-08 18:40:40"
+            "time": "2017-08-08 19:19:33"
         },
         {
             "name": "codeandcode/simplebase-start",
@@ -197,7 +196,7 @@
                 "upload",
                 "validation"
             ],
-            "time": "2013-07-07 17:01:41"
+            "time": "2013-07-07T17:01:41+00:00"
         },
         {
             "name": "desarrolla2/cache",
@@ -252,7 +251,7 @@
                 "mysql",
                 "redis"
             ],
-            "time": "2017-01-18 12:58:33"
+            "time": "2017-01-18T12:58:33+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -329,7 +328,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2017-07-26 21:00:20"
+            "time": "2017-07-26T21:00:20+00:00"
         },
         {
             "name": "plasticbrain/php-flash-messages",
@@ -371,7 +370,7 @@
                 "messages",
                 "session"
             ],
-            "time": "2016-04-01 08:39:38"
+            "time": "2016-04-01T08:39:38+00:00"
         },
         {
             "name": "twig/twig",
