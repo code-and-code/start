@@ -15,11 +15,13 @@ O Start tenta facilitar a vida do desenvolvedor iniciante, disponibilizando os s
     Envio de email
     Sistema de upload
     
+    Site: http://start.codeandcode.com.br/
+    
 ## Instalação
 
 #### 1 - Dependências do Projeto
 
-    php 5.3+
+    php 5.4+
     composer
     mysql
 
