@@ -9,8 +9,8 @@
     "require": {
         "php": ">=5.5",
         "codeandcode/micro-fwk":  "dev-master",
-        "codeandcode/auth-start": "dev-master",
-        "codeandcode/simplebase-start": "dev-master"
+        "codeandcode/auth-start": "1.*",
+        "codeandcode/simplebase-start": "1.*"
      },
     "authors": [
         {
@@ -33,5 +33,9 @@
 
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+
+    "config": {
+        "optimize-autoloader": true
+    }
 }
