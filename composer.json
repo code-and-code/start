@@ -28,7 +28,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "App\\": "App/",
+            "App\\": "App/"
         }
     },
     "minimum-stability": "dev",
