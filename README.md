@@ -21,7 +21,7 @@ O Start tenta facilitar a vida do desenvolvedor iniciante, disponibilizando os s
 
 #### 1 - Dependências do Projeto
 
-    php 5.4+
+    php 5.5+
     composer
     mysql
 
