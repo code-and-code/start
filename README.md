@@ -76,7 +76,8 @@ Métodos de query;
     all() -> busca todos registros da tabela
     find($id) -> busca determinado registro através do ID
     where($name,$operator,$value) -> clausula de comparação
-    andWhere($name,$operator,$value) -> clausula de comparação 
+    andWhere($name,$operator,$value) -> clausula de comparação com oprador AND
+    orWhere($name,$operator,$value) -> clausula de comparação com operador OR
     create(array $attributes) -> cria registro com os atributos passados por parametro 
     update(array $attributes) -> atualiza o registro com os atributos passados por parametro
     delete() -> deleta registro
